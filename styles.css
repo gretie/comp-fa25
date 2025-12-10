@@ -1,0 +1,157 @@
+html * {
+  padding: 0;
+  margin: 0;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Serif;
+  font-size: 16px;
+  background: white;
+  padding: 40px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.header h1 {
+  font-weight: lighter;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+.student-section {
+  margin: 10px 20px;
+}
+
+.blind {
+  padding: 20px 40px;
+  border: solid 2px black;
+  transition: all 0.2s;
+}
+
+.student-name {
+  cursor: pointer;
+}
+
+.student-name:hover {
+  background: red;
+  transform: scale(1.01);
+}
+
+.student-name.active {
+  background: red;
+}
+
+.projects {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+  border-bottom: solid 2px black;
+  margin-top: -2px;
+}
+
+.projects.open {
+  max-height: 500px;
+  transition: max-height 0.4s ease-in;
+}
+
+.project-link {
+  display: block;
+  padding: 15px 40px;
+  border-bottom: solid 1px black;
+  font-size: 18px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.project-link:last-child {
+  border-bottom: none;
+}
+
+.project-link:hover {
+  background: red;
+  padding-left: 50px;
+}
+
+/* PROJECT DETAIL VIEW STYLES */
+#project-view {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 15px 30px;
+  margin-bottom: 40px;
+  border: solid 2px black;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background: red;
+  transform: scale(1.01);
+}
+
+.project-detail {
+  text-align: center;
+}
+
+.project-detail h1 {
+  font-weight: lighter;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.project-description {
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.iframe-container iframe {
+  border: solid 2px black;
+}
