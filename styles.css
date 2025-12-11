@@ -1,3 +1,33 @@
+/*:root {
+  --background-color: #FF9966;
+  --text-border-color: #8C5F31;
+  --hover-color: #FFD2DD;
+}*/
+
+/*:root {
+  --background-color: #9AB79A;
+  --text-border-color: #094436;
+  --hover-color: #FDFF50;
+}*/
+/**:root {
+  --background-color: #501718;
+  --text-border-color: #FD750A;
+  --hover-color: #FFFFFF;
+}*/
+/**:root {
+  --background-color: #E2A9C9;
+  --text-border-color: #000000;
+  --hover-color: #FC411E;
+}*/
+
+
+*:root {
+  --background-color: #B2B2B2;
+  --text-border-color: #000000;
+  --hover-color: #E9FF27;
+}
+
+
 html * {
   padding: 0;
   margin: 0;
@@ -12,8 +42,9 @@ html * {
 body {
   font-family: 'Times New Roman', Serif;
   font-size: 16px;
-  background: white;
+  background: var(--background-color);
   padding: 40px 20px;
+  color: var(--text-border-color);
 }
 
 .header {
@@ -30,8 +61,17 @@ body {
 .subtitle {
   font-size: 18px;
   font-style: italic;
-  color: #333;
+  color: var(--text-border-color);
 }
+
+.course-description {
+  font-size: 16px;
+  max-width: 700px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+  color: var(--text-border-color);
+}
+
 
 .contain {
   display: flex;
@@ -42,7 +82,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--text-border-color);
 }
 
 h2 {
@@ -56,7 +96,7 @@ h2 {
 
 .blind {
   padding: 20px 40px;
-  border: solid 2px black;
+  border: solid 2px var(--text-border-color);
   transition: all 0.2s;
 }
 
@@ -65,21 +105,21 @@ h2 {
 }
 
 .student-name:hover {
-  background: red;
+  background: var(--hover-color);
   transform: scale(1.01);
 }
 
 .student-name.active {
-  background: red;
+  background: var(--hover-color);
 }
 
 .projects {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  border-left: solid 2px black;
-  border-right: solid 2px black;
-  border-bottom: solid 2px black;
+  border-left: solid 2px var(--text-border-color);
+  border-right: solid 2px var(--text-border-color);
+  border-bottom: solid 2px var(--text-border-color);
   margin-top: -2px;
 }
 
@@ -91,7 +131,7 @@ h2 {
 .project-link {
   display: block;
   padding: 15px 40px;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px var(--text-border-color);
   font-size: 18px;
   transition: all 0.2s;
   cursor: pointer;
@@ -102,7 +142,7 @@ h2 {
 }
 
 .project-link:hover {
-  background: red;
+  background: var(--hover-color);
   padding-left: 50px;
 }
 
@@ -116,14 +156,14 @@ h2 {
   display: inline-block;
   padding: 15px 30px;
   margin-bottom: 40px;
-  border: solid 2px black;
+  border: solid 2px var(--text-border-color);
   cursor: pointer;
   font-size: 18px;
   transition: all 0.2s;
 }
 
 .back-button:hover {
-  background: red;
+  background: var(--hover-color);
   transform: scale(1.01);
 }
 
@@ -153,5 +193,5 @@ h2 {
 }
 
 .iframe-container iframe {
-  border: solid 2px black;
+  border: solid 2px var(--text-border-color);
 }
