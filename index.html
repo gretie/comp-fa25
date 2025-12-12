@@ -272,32 +272,40 @@
 
       // Show project detail view
       function showProjectView(studentIndex, projectIndex) {
-        const student = studentsData[studentIndex];
-        const project = student.projects[projectIndex];
-        
-        document.getElementById('project-student-name').textContent = student.name;
-        document.getElementById('project-description').textContent = project.description;
-        document.getElementById('project-iframe').src = project.url;
-        
-        // Hide description if empty
-        const descElement = document.getElementById('project-description');
-        if (!project.description) {
-          descElement.style.display = 'none';
-        } else {
-          descElement.style.display = 'block';
-        }
-        
-        document.getElementById('list-view').style.display = 'none';
-        document.getElementById('project-view').style.display = 'block';
-        window.scrollTo(0, 0);
+      const student = studentsData[studentIndex];
+      const project = student.projects[projectIndex];
+      
+      // Save current scroll position
+      sessionStorage.setItem('scrollPosition', window.scrollY);
+      
+      document.getElementById('project-student-name').textContent = student.name;
+      document.getElementById('project-description').textContent = project.description;
+      document.getElementById('project-iframe').src = project.url;
+      
+      // Hide description if empty
+      const descElement = document.getElementById('project-description');
+      if (!project.description) {
+        descElement.style.display = 'none';
+      } else {
+        descElement.style.display = 'block';
       }
+      
+      document.getElementById('list-view').style.display = 'none';
+      document.getElementById('project-view').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
 
       // Show list view
       function showListView() {
         document.getElementById('list-view').style.display = 'block';
         document.getElementById('project-view').style.display = 'none';
         document.getElementById('project-iframe').src = ''; // Stop iframe from running
-        window.scrollTo(0, 0);
+        
+        // Restore saved scroll position
+        const savedPosition = sessionStorage.getItem('scrollPosition');
+        if (savedPosition) {
+          window.scrollTo(0, parseInt(savedPosition));
+        }
       }
 
       // Initialize page
